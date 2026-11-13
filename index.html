@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Moussa & Fatima — Notre mariage</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+    :root {
+      --cream: #f8f3eb;
+      --beige: #dcc9b6;
+      --light-beige: #eee3d7;
+      --brown: #5c4033;
+      --chocolate: #3d2921;
+      --gold: #b5966b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--brown);
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.7;
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .container {
+      width: min(900px, 100%);
+      margin: auto;
+      text-align: center;
+    }
+
+    /* ACCUEIL */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at top left, rgba(220, 201, 182, .45), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(181, 150, 107, .18), transparent 35%);
+    }
+
+    .verse {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.2rem, 3vw, 1.7rem);
+      font-style: italic;
+      max-width: 750px;
+      margin: 0 auto 10px;
+    }
+
+    .source {
+      font-size: .9rem;
+      margin-bottom: 35px;
+      color: var(--gold);
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(4rem, 10vw, 7rem);
+      line-height: .9;
+      font-weight: 500;
+      color: var(--chocolate);
+      margin: 20px 0;
+    }
+
+    .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-style: italic;
+      margin: 25px 0;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .dates {
+      margin-top: 35px;
+      letter-spacing: 3px;
+      font-weight: 600;
+      color: var(--chocolate);
+    }
+
+    .inshallah {
+      margin-top: 8px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+    }
+
+    /* Le style de notre bouton */
+.program-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 13px 25px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  color: var(--chocolate);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.program-button:hover {
+  background: var(--chocolate);
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+
+    /* PHOTO */
+    .photo-section {
+      background: var(--light-beige);
+    }
+
+    .photo-placeholder {
+      width: min(650px, 100%);
+      aspect-ratio: 4 / 5;
+      margin: auto;
+      border: 2px solid var(--beige);
+      border-radius: 180px 180px 20px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background: rgba(255, 255, 255, .35);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-style: italic;
+    }
+
+    /* TITRES */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 500;
+      color: var(--chocolate);
+      margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+      color: var(--gold);
+      margin-bottom: 45px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: .8rem;
+    }
+
+    /* PROGRAMME */
+    .program {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      text-align: left;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border: 1px solid var(--light-beige);
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(61, 41, 33, .05);
+    }
+
+    .day {
+      color: var(--gold);
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .event {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--chocolate);
+      margin: 8px 0;
+    }
+
+    .details {
+      font-size: .9rem;
+    }
+
+    /* INFORMATION */
+    .notice-section {
+      background: var(--chocolate);
+      color: var(--cream);
+    }
+
+    .notice-section .section-title {
+      color: var(--beige);
+    }
+
+    .notice-box {
+      max-width: 700px;
+      margin: auto;
+      border: 1px solid rgba(220, 201, 182, .5);
+      padding: 35px 25px;
+      border-radius: 15px;
+    }
+
+    /* COMPTE À REBOURS */
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 35px;
+    }
+
+    .time-box {
+      background: var(--light-beige);
+      min-width: 110px;
+      padding: 20px 10px;
+      border-radius: 12px;
+    }
+
+    .time-box span {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      color: var(--chocolate);
+    }
+
+    .time-box small {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: .7rem;
+    }
+
+    /* FIN */
+    .closing {
+      background: var(--light-beige);
+    }
+
+    .closing-message {
+      max-width: 600px;
+      margin: auto;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-style: italic;
+    }
+
+    .signature {
+      margin-top: 25px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      color: var(--chocolate);
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      font-size: .8rem;
+      background: var(--cream);
+    }
+
+    @media (max-width: 650px) {
+      section {
+        padding: 60px 18px;
+      }
+
+      .program {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 80px 0;
+      }
+    }
+
+    /* Animation d'apparition douce */
+      .reveal {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Petites décorations florales */
+.flower {
+  color: var(--gold);
+  font-size: 1.4rem;
+  letter-spacing: 8px;
+  margin: 15px 0;
+}
+/* Illustrations florales dans les coins */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.corner-flower {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+.corner-flower svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 2;
+}
+
+.corner-flower svg circle {
+  fill: var(--beige);
+  stroke: var(--gold);
+}
+
+.flower-top {
+  top: -40px;
+  right: -40px;
+}
+
+.flower-bottom {
+  bottom: -20px;
+  left: -20px;
+  transform: rotate(180deg);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Le contenu reste au-dessus des fleurs */
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- ACCUEIL -->
+  <section class="hero">
+    <div class="corner-flower flower-top">
+  <svg viewBox="0 0 200 200" aria-hidden="true">
+    <!-- Tiges -->
+    <path d="M30 180 C70 130, 85 90, 110 20" />
+    <path d="M55 185 C85 145, 120 115, 175 45" />
+
+    <!-- Feuilles -->
+    <path d="M65 125 C35 110, 35 80, 70 90 C85 100, 78 118, 65 125" />
+    <path d="M85 85 C115 70, 135 78, 125 105 C110 110, 95 100, 85 85" />
+    <path d="M115 125 C145 110, 165 125, 155 150 C135 150, 120 140, 115 125" />
+
+    <!-- Fleurs -->
+    <circle cx="110" cy="28" r="12" />
+    <circle cx="175" cy="45" r="10" />
+    <circle cx="70" cy="90" r="8" />
+  </svg>
+</div>
+
+<div class="corner-flower flower-bottom">
+  <svg viewBox="0 0 200 200" aria-hidden="true">
+    <!-- Tiges -->
+    <path d="M30 180 C70 130, 85 90, 110 20" />
+    <path d="M55 185 C85 145, 120 115, 175 45" />
+
+    <!-- Feuilles -->
+    <path d="M65 125 C35 110, 35 80, 70 90 C85 100, 78 118, 65 125" />
+    <path d="M85 85 C115 70, 135 78, 125 105 C110 110, 95 100, 85 85" />
+    <path d="M115 125 C145 110, 165 125, 155 150 C135 150, 120 140, 115 125" />
+
+    <!-- Fleurs -->
+    <circle cx="110" cy="28" r="12" />
+    <circle cx="175" cy="45" r="10" />
+    <circle cx="70" cy="90" r="8" />
+  </svg>
+</div>
+
+    <div class="container">
+
+      <p class="verse">
+        « Et parmi Ses signes, Il a créé de vous, pour vous, des épouses afin que
+        vous viviez en tranquillité avec elles, et Il a mis entre vous de l'affection
+        et de la miséricorde. »
+      </p>
+
+      <p class="source">— Sourate Ar-Rûm, verset 21 🤲🏽</p>
+
+      <h1>Moussa<br>& Fatima</h1>
+
+      <p class="tagline">
+        Deux chemins, deux histoires… et aujourd'hui une même destinée.
+      </p>
+
+      <p class="intro">
+        C'est avec beaucoup de joie et de gratitude envers Allah que nous vous
+        annonçons notre mariage.<br><br>
+        Nous serions heureux de partager avec vous ces précieux moments qui
+        marqueront le début de notre nouvelle vie à deux. 🤍
+      </p>
+
+      <p class="dates">18 • 19 • 20 • 21 DÉCEMBRE 2026</p>
+      <p class="inshallah">Inshallah 🤲🏽</p>
+      <a href="#programme" class="program-button">♡ Découvrir notre programme ♡</a>
+
+    </div>
+  </section>
+
+  <!-- FUTURE PHOTO -->
+  <section class="photo-section reveal">
+    <div class="container">
+      <p class="section-subtitle">Notre histoire commence</p>
+
+      <div class="photo-placeholder">
+        Notre photo pré-wedding bientôt ici 🤎
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMME -->
+  <section id="programme" class="reveal">
+    <div class="container">
+
+      <h2 class="section-title">Notre programme</h2>
+      <p class="flower">❀ ❀ ❀</p>
+      <p class="section-subtitle">Dates à retenir</p>
+
+      <div class="program">
+
+        <div class="card">
+          <p class="day">Vendredi 18 décembre 2026</p>
+          <h3 class="event">Méga Khadara Diouma</h3>
+        </div>
+
+        <div class="card">
+          <p class="day">Samedi 19 décembre 2026</p>
+          <h3 class="event">Henné Time</h3>
+          <p class="details">Animation : Guél & Ngoyane</p>
+        </div>
+
+        <div class="card">
+          <p class="day">Dimanche 20 décembre 2026</p>
+          <h3 class="event">Réception de mariage</h3>
+        </div>
+
+        <div class="card">
+          <p class="day">Lundi 21 décembre 2026</p>
+          <h3 class="event">Céremonie de Thiéte</h3>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- INFORMATION RÉCEPTION -->
+  <section class="notice-section reveal">
+    <div class="container">
+
+      <h2 class="section-title">Information importante</h2>
+
+      <div class="notice-box">
+        <p>
+          La réception de mariage du dimanche 20 décembre 2026 se fera
+          uniquement sur invitation.
+          <br><br>
+          L'accès à la réception sera réservé aux personnes munies d'une
+          <strong>carte d'invitation physique</strong>.
+          <br><br>
+          Nous vous remercions de votre compréhension. 🤍
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPTE À REBOURS -->
+  <section>
+    <div class="container">
+
+      <h2 class="section-title">Le compte à rebours</h2>
+      <p class="section-subtitle">Chaque jour nous rapproche</p>
+
+      <div class="countdown" id="countdown">
+        <div class="time-box">
+          <span id="days">0</span>
+          <small>Jours</small>
+        </div>
+        <div class="time-box">
+          <span id="hours">0</span>
+          <small>Heures</small>
+        </div>
+        <div class="time-box">
+          <span id="minutes">0</span>
+          <small>Minutes</small>
+        </div>
+        <div class="time-box">
+          <span id="seconds">0</span>
+          <small>Secondes</small>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FIN -->
+  <section class="closing reveal">
+    <div class="container">
+
+      <p class="flower">❀ ❀ ❀</p>
+
+      <p class="closing-message">
+        Nous avons hâte de partager ces précieux moments avec vous.
+      </p>
+
+      <p class="signature">Moussa & Fatima 🤎</p>
+
+      <p class="inshallah">Avec toute notre affection • Inshallah 🤲🏽</p>
+
+    </div>
+  </section>
+
+  <footer>
+    Moussa & Fatima • Décembre 2026 🤍
+  </footer>
+
+  <script>
+    // Date du début des célébrations : 18 décembre 2026 à minuit
+    const weddingDate = new Date("December 18, 2026 00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      if (distance <= 0) {
+        document.getElementById("countdown").innerHTML =
+          "<p>Les célébrations ont commencé ! 🤍</p>";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      const seconds = Math.floor(
+        (distance % (1000 * 60)) / 1000
+      );
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Animation des sections au défilement
+    const elementsToReveal = document.querySelectorAll('.reveal');
+
+    const revealOnScroll = () => {
+      const windowHeight = window.innerHeight;
+      
+      elementsToReveal.forEach((element) => {
+        const elementTop = element.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 80) {
+          element.classList.add('visible');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+  </script>
+
+</body>
+</html>
